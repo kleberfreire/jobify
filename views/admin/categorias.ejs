@@ -1,0 +1,14 @@
+<%- include('header.ejs') %>
+
+ 
+    <h2>Admin categorias: <a href="/admin/categoria/nova">Nova categoria</a></h2>
+    <div class="jobsList">
+      <% - categorias.forEach( (cat) => {%> 
+       <ul>
+          <li><%-cat.categoria%> <a href="/admin/categoria/delete/<%-cat.id%>">excluir</a> <a href="/admin/categoria/update/<%-cat.id%>">update</a></li>
+        </ul>
+      <%})%>
+    </div>
+  </div>
+
+ <%- include('footer.ejs') %>
