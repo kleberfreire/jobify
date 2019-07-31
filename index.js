@@ -3,7 +3,7 @@ const bodyParser = require('body-parser')
 const path = require('path')
 // sqlite
 const sqlite = require('sqlite')
-const dbconnection = sqlite.open('banco.sqlite', { Promise })
+const dbconnection = sqlite.open(path.resolve(__dirname, 'banco.sqlite'), { Promise })
 
 // port
 const port = process.env.PORT || 3000
