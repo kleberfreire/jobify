@@ -22,6 +22,15 @@ app.set('view engine', 'ejs')
 app.use(express.static(path.join(__dirname, 'public')))
 
 // rotas
+
+app.use('/admin', (req, res, next) => {
+  if (req.hostname === 'localhost') {
+    next()
+  } else {
+    res.send('Pagina não encontrada')
+  }
+
+})
 app.get('/', async (req, res) => {
   const db = await dbconnection
   const categoriasDb = await db.all('select * from categorias;')
